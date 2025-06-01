@@ -1,0 +1,716 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: linear-gradient(to right, rgb(9, 9, 77), rgb(0, 0, 0));
+}
+
+/* Header */
+header {
+  z-index: 999;
+  padding: 10px;
+  text-align: center;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.523);
+  width: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom: 3px solid white;
+  position: fixed;
+  transition: all 0.3s ease;
+  animation: beranda 0.9s ease-out forwards;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+
+@keyframes beranda {
+  to {
+    transform: translate(-50%, 0);
+  }
+}
+
+nav {
+  display: flex;
+  padding: 30px;
+  text-align: center;
+  align-items: center;
+}
+
+.hero h2 {
+  color: white;
+  border: 2px solid white;
+  padding: 5px;
+  background-color: rgb(1, 1, 91);
+  border-radius: 10px;
+  box-shadow: 3px 2px 5px 3px black;
+  left: 0;
+}
+
+nav a {
+  left: 30vh;
+  margin-left: 15vh;
+  padding: 5px 5px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s ease;
+  position: relative;
+  font-weight: 800;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.2rem;
+}
+
+nav a span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid blue;
+  border-radius: 10px;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s;
+  transform: scale(0) translateY(50px);
+}
+
+nav a:hover span {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+nav a:hover {
+  color: blue;
+}
+
+/* .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: transparent;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 900;
+  font-family: "Times New Roman", Times, serif;
+  padding: 12px 16px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s;
+}
+
+.dropdown-btn:hover {
+  background-color: blue;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 0 0 4px 4px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  text-align: center;
+  margin: 5px;
+  color: black;
+  padding: 12px 11px;
+  text-decoration: none;
+  display: block;
+  transition: all .3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropdown-btn {
+  border-radius: 4px 4px 0 0;
+} */
+ .menu-toggle{
+  display: none;
+  background: none;
+  border: none;
+}
+/* Resposive */
+@media screen and (max-width: 768px) {
+  .menu-toggle{
+    display: block;
+    color: white;
+  }
+  .hero {
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    position: absolute;
+    background-color: orange;
+    top: 75px;
+    left: 0;
+    width: 20%;
+  }
+  .hero.show {
+    display: flex;
+  }
+}
+
+/* Beranda */
+
+.rumah {
+  margin: auto;
+  padding: 15vh;
+  margin-top: 30px;
+  margin-top: 0;
+}
+
+.awal {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin: auto;
+  margin-top: 14px;
+  align-items: center;
+  padding: 40.5px;
+}
+
+.awal img {
+  width: 50vh;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 3px 2px 5px 3px black;
+}
+
+.hallo {
+  justify-content: center;
+  margin: auto;
+  margin-left: 15vh;
+  margin-top: 15vh;
+}
+
+.bungkus {
+  border: 2px solid white;
+  height: 50%;
+  border-radius: 20px;
+  padding: 20px;
+  margin-right: 10vh;
+  box-shadow: 3px 2px 5px 3px black;
+}
+
+.hallo h1 {
+  color: white;
+  font-size: 3.5rem;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 20px;
+}
+
+.hallo span {
+  color: blue;
+}
+
+.hallo p {
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 800;
+  font-size: 30px;
+}
+
+.link {
+  border: 2px solid white;
+  padding: 10px;
+  top: 10px;
+  margin-left: 22vh;
+  border-radius: 15px;
+  box-shadow: 2px 2px 1px 1px black;
+  margin-top: 1vh;
+  width: 30%;
+  margin-bottom: 20px;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.link:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: blue;
+  transition: left 0.3s ease;
+}
+
+.link:hover::before {
+  left: 0;
+}
+
+.link:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.link a {
+  text-decoration: none;
+  color: white;
+  font-size: 2.5;
+}
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  .awal {
+    display: flex;
+    flex-direction: column;
+  }
+  .awal img {
+    width: 35vh;
+    max-width: 300px;
+    margin: 20px 20px;
+  }
+  .hallo {
+    top: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .bungkus {
+    margin-left: -10vh;
+    margin-top: -10vh;
+    width: 200%;
+  }
+  .bungkus h1,
+  span {
+    font-size: 2rem;
+    padding: 0vh;
+    width: 100%;
+  }
+  .bungkus p {
+    padding: 0px;
+    font-size: 1.5rem;
+  }
+  .link {
+    margin-top: 20px;
+    margin: 0;
+    margin-left: 2vh;
+    width: 100%;
+  }
+  .link a {
+    padding: 5px;
+    font-size: 1.4rem;
+  }
+}
+
+/* Tentang Saya */
+
+.tentang {
+  margin-top: -21.6vh;
+  padding: 8px;
+  text-align: center;
+  margin-bottom: 30vh;
+}
+
+.saya {
+  padding: -20px;
+}
+
+.saya h2 {
+  margin-top: 18vh;
+  padding-top: 10vh;
+  font-size: 3rem;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 900;
+  margin-bottom: 30px;
+  text-decoration: underline;
+}
+
+.aku {
+  display: flex;
+  padding: 10px;
+}
+
+.paragraf {
+  margin-right: 20px;
+  margin-top: 60px;
+}
+
+.paragraf h1 {
+  color: white;
+  text-align: left;
+  margin-left: 6.5vh;
+}
+
+.paragraf p {
+  color: white;
+  text-shadow: 2px 2px 1px black;
+  text-align: left;
+  margin-left: 40px;
+  font-size: 1.1rem;
+}
+
+.rifai img {
+  width: 50vh;
+  margin: 5px;
+  border-radius: 20px;
+  box-shadow: 3px 2px 5px 3px black;
+}
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  .tentang {
+    margin-top: 0;
+    padding: 20px 10px;
+    margin-bottom: 10vh;
+  }
+
+  .saya {
+    margin-top: 33vh;
+    padding: 10px;
+  }
+
+  .saya h2 {
+    margin-top: 10vh;
+    padding-top: 5vh;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .aku {
+    flex-direction: column-reverse;
+    padding: 0;
+    align-items: center;
+  }
+
+  .paragraf {
+    margin-right: 0;
+    margin-top: 30px;
+    width: 90%;
+  }
+
+  .paragraf h1 {
+    margin-left: 0;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .paragraf p {
+    margin-left: 0;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .rifai img {
+    width: 80%;
+    max-width: 300px;
+    margin: 20px auto;
+  }
+}
+
+/* Portofolio */
+
+.poto {
+  align-items: center;
+  text-align: center;
+  margin-top: -30vh;
+  padding: 5vh;
+}
+
+.informasi {
+  margin: 10vh;
+  padding: 10vh;
+}
+
+.portfolio h1 {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  font-family: "Times New Roman", Times, serif;
+  text-decoration: underline;
+}
+
+.portfolio table {
+  width: 94%;
+  border-collapse: collapse;
+  margin: 30px;
+  align-items: center;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.portfolio th,
+td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.portfolio th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.portfolio tr:nth-child(n) {
+  background-color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.portfolio tr:hover {
+  background-color: #e2c803;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.portfolio tr a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.portfolio tr a:hover {
+  color: white;
+}
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+  .portfolio table {
+    width: 100%;
+  }
+  .portfolio h1 {
+    margin-left: -15vh;
+  }
+  .portfolio table {
+    margin-left: -22vh;
+  }
+}
+
+/* Opini */
+.lengkap {
+  margin-top: -21.6vh;
+  padding: 20vh;
+}
+
+.lebih {
+  margin-bottom: -23.7vh;
+  padding: 5vh;
+}
+
+.Opini {
+  align-items: center;
+  text-align: center;
+  margin: 3px;
+  padding: -20px;
+}
+.Opini h1 {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  padding: 1px;
+  font-family: "Times New Roman", Times, serif;
+  text-decoration: underline;
+}
+
+.grid-container {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  height: 180px;
+  background-color: #ddd;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.judul-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .Opini {
+    width: 200%;
+  }
+
+  .Opini h1 {
+    margin-left: -10vh;
+  }
+  .grid-container {
+    margin-left: -10vh;
+    width: 150%;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Contact */
+.panggil {
+  padding: 15vh;
+}
+
+.contact {
+  padding: 10px;
+}
+
+.contact {
+  color: white;
+  padding: 10vh;
+}
+
+.contact .section-title h2 {
+  color: white;
+  text-align: center;
+}
+
+.contact .section-title h2::after {
+  background-color: white;
+}
+
+.contact-content {
+  display: flex;
+  gap: 3rem;
+}
+
+.contact-info {
+  flex: 1;
+  text-align: center;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.contact-info p {
+  margin-bottom: 2rem;
+}
+
+.info {
+  margin-left: 15vh;
+}
+
+.info h4 {
+  text-align: left;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 22px;
+}
+
+.maps {
+  margin-left: 30vh;
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 30px;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    width: 150%;
+  }
+  .container h1 {
+    font-size: 5rem;
+    margin-left: -50vh;
+  }
+  .contact-info h3 {
+    margin-left: -5vh;
+  }
+  .info {
+    margin-left: -15vh;
+  }
+}
+/* Fother */
+footer {
+  color: white;
+  text-align: center;
+  margin-top: -15vh;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  background-color: blue;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.social-link:hover {
+  background-color: white;
+  color: blue;
+  transform: translateY(-3px);
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: white;
+}
